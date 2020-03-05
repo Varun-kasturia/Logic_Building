@@ -54,7 +54,7 @@ int Extra_Days(int day,int month,int year)
 		int arr[12]={31,28,31,30,31,30,31,31,30,31,30,31};
 		int i=0;
 		int Total_Days=0;
-		while(month!=i+1)
+		while(month>i+1)
 		{
 			
 			Total_Days=Total_Days+arr[i];
@@ -70,7 +70,7 @@ int Extra_Days(int day,int month,int year)
 		int arr[12]={31,29,31,30,31,30,31,31,30,31,30,31};
 		int i=0;
 		int Total_Days=0;
-		while(month!=i+1)
+		while(month>i+1)
 		{
 			
 			Total_Days=Total_Days+arr[i];
@@ -90,10 +90,7 @@ int main()
 	int a=cy%400;
 	int b=a%100;
 	int ed=(a/100)*5+b+(b/4);
-	for(int i=0;i<m;i++)
-	{
-		ed=ed+Extra_Days(d,m,y);
-	}
+	ed=ed+Extra_Days(d,m,y);
 	Output(ed%7);
 
 }
